@@ -115,6 +115,16 @@ likeButton?.addEventListener('click', () => {
 const searchInput = document.querySelector('.search-bar input');
 const searchMic = document.querySelector('.search-bar .fa-microphone');
 
+searchInput?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && searchInput.value.trim() !== '') {
+        e.preventDefault(); // Prevent form submission if within a form
+        const searchTerm = searchInput.value.trim();
+        showToast(`Searching for: "${searchTerm}"`, 'fa-search');
+        // Here you would typically handle the actual search functionality
+        searchInput.blur(); // Remove focus from input
+    }
+});
+
 searchInput?.addEventListener('input', (e) => {
     console.log('Searching:', e.target.value);
 });
@@ -230,6 +240,56 @@ searchInput.addEventListener('focus', () => {
 
 searchMic.addEventListener('click', () => {
     speak("Voice search activated", true);
+});
+
+// Toast notification functionality
+function showToast(message, icon = 'fa-info-circle') {
+    const toastContainer = document.querySelector('.toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `
+        <i class="fas ${icon}"></i>
+        <span>${message}</span>
+    `;
+
+    toastContainer.appendChild(toast);
+    
+    // Play feedback sounds
+    playFeedback('clickSound');
+    speak(message);
+
+    // Remove toast after animation
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+}
+
+// Add click handlers to buttons without functionality
+const actionButtons = document.querySelectorAll('.action-btn');
+actionButtons.forEach(button => {
+    if (!button.classList.contains('like-btn')) {
+        button.addEventListener('click', () => {
+            const action = button.querySelector('i').classList.contains('fa-comment') ? 'Comment' :
+                          button.querySelector('i').classList.contains('fa-share') ? 'Share' :
+                          button.querySelector('i').classList.contains('fa-paper-plane') ? 'Send' : 'Action';
+            showToast(`${action} button clicked`, button.querySelector('i').className);
+        });
+    }
+});
+
+// Add click handlers to navigation items
+document.querySelectorAll('.nav-item').forEach(item => {
+    if (!item.classList.contains('toggle-item')) {
+        item.addEventListener('click', () => {
+            const text = item.querySelector('span')?.textContent || 'Item';
+            showToast(`${text} clicked`, 'fa-circle-info');
+        });
+    }
+});
+
+// Add click handler for search mic
+searchMic.addEventListener('click', () => {
+    showToast('Voice search activated', 'fa-microphone');
 });
 
 // Slideshow functionality
