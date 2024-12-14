@@ -1,5 +1,5 @@
 :root {
-    --black-primary: #161616;
+    --black-primary: #171717;
     --white-primary: #f2f2f2;
 
     --gray-accent: #a9a9a9;
@@ -68,7 +68,11 @@ main {
     border-radius: var(--br-small);
     color: var(--white-primary);
     background-color: var(--dark-gray-accent);
-    /* text-align: ; */
+}
+
+#subscribe-premium p {
+    padding-bottom: .5rem;
+    border-bottom: var(--white-primary) 1px solid;
 }
 
 .nav-list {
@@ -248,8 +252,7 @@ input:checked + .slider:before {
 
 .custom-btn {
     width: 100%;
-    padding: 0.75rem;
-    margin-top: 0.75rem;
+    padding: 0.25rem 0.75rem ;
     border: none;
     border-radius: var(--br-small);
     background-color: var(--black-primary);
@@ -266,6 +269,7 @@ input:checked + .slider:before {
 }
 
 .subscribe-btn {
+    margin-top: .5rem;
     background-color: var(--gray-accent);
     color: var(--black-primary);
 }
@@ -302,5 +306,9 @@ input:checked + .slider:before {
 
     #signup_div {
         padding: var(--pd-small);
+    }
+
+    #subscribe-premium {
+        text-align: center;
     }
 }
