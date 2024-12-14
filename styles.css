@@ -689,6 +689,7 @@ input:checked + .slider:before {
 
 .signup-container {
     max-width: 400px;
+    overflow-y: auto;
     margin: 2rem auto;
     padding: 2rem;
     color: var(--white-primary);
