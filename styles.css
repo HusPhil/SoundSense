@@ -238,7 +238,7 @@ input:checked + .slider:before {
     }
 
     50% {
-        transform: translateY(-5px);
+        transform: translateY(-10px);
     }
     100% {
         transform: translateY(0px);
@@ -687,6 +687,114 @@ input:checked + .slider:before {
     transform: scale(1.2);
 }
 
+.signup-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    color: var(--white-primary);
+}
+
+.signup-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--gray-accent);
+    margin-bottom: 2rem;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--gray-accent);
+    font-size: 0.9rem;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 0.8rem;
+    padding-right: 2.5rem;
+    background: var(--black-primary);
+    border: 1px solid var(--dark-gray-accent);
+    border-radius: var(--br-small);
+    color: var(--white-primary);
+    font-size: 1rem;
+}
+
+.input-container input::placeholder {
+    color: var(--dark-gray-accent);
+}
+
+.input-container i {
+    position: absolute;
+    right: 1rem;
+    color: var(--gray-accent);
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--gray-accent);
+}
+
+.terms-checkbox label {
+    color: var(--gray-accent);
+    font-size: 0.75rem;
+}
+
+.join-btn {
+    background: var(--gray-accent);
+    color: var(--black-primary);
+    border: none;
+    padding: 1rem;
+    border-radius: var(--br-small);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.join-btn:hover {
+    background: var(--white-primary);
+}
+
+.login-link {
+    text-align: center;
+    color: var(--gray-accent);
+}
+
+.login-link a {
+    color: var(--white-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
 /* Media Queries for Small Screens */
 @media screen and (max-width: 768px) {
     main {
@@ -752,6 +860,11 @@ input:checked + .slider:before {
         width: 100%;
         justify-content: center;
         gap: 15px;
+    }
+
+    .signup-container {
+        margin: 1rem;
+        padding: 1rem;
     }
 }
 
