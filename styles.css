@@ -300,11 +300,14 @@ input:checked + .slider:before {
 
 .player-controls {
     display: flex;
-    gap: var(--pd-small);
+    flex-direction: column;
 }
 
 .song-info {
     display: flex;
+    width: 100%;
+    margin-top: var(--pd-medium);
+    justify-content: center;
     align-items: center;
     gap: var(--pd-small);
 }
@@ -316,7 +319,8 @@ input:checked + .slider:before {
 .song-text {
     display: flex;
     flex-direction: column;
-    max-width: 150px;
+    justify-content: center;
+    align-items: center;
     margin-left: var(--pd-small);
 }
 
@@ -333,7 +337,7 @@ input:checked + .slider:before {
 .controls {
     display: flex;
     align-items: center;
-    flex: 2;
+    width: 100%;
     justify-content: center;
     gap: var(--pd-small);
     margin-top: var(--pd-medium);
@@ -1006,11 +1010,6 @@ input:checked + .slider:before {
     .progress {
         width: 100%;
         margin: 10px 0;
-    }
-
-    .player-controls {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .song-info {
