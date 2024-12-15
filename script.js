@@ -442,3 +442,25 @@ joinBtn?.addEventListener('click', (e) => {
     showToast('Account created successfully! Welcome to SoundSense', 'fa-check-circle');
     speak('Account created successfully! Welcome to SoundSense', true);
 });
+
+// Welcome Modal functionality
+function showWelcomeModal() {
+    const modal = document.getElementById('welcome-modal');
+    setTimeout(() => {
+        modal.classList.add('show');
+        // Announce to screen readers
+        modal.setAttribute('aria-hidden', 'false');
+        // Play a gentle welcome sound
+        playFeedback('welcomeSound');
+    }, 1000);
+
+    const startJourneyBtn = document.getElementById('start-journey-btn');
+    startJourneyBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        playFeedback('clickSound');
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', showWelcomeModal);
