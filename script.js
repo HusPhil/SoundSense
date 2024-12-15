@@ -83,6 +83,10 @@ document.querySelectorAll('button, .nav-item, input[type="checkbox"], .action-bt
 document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]').forEach(input => {
     input.addEventListener('focus', () => {
         playFeedback('clickSound');
+        // Speak the aria-label or label text when input is focused
+        const ariaLabel = input.getAttribute('aria-label');
+        const labelText = input.previousElementSibling?.textContent;
+        speak(ariaLabel || labelText || 'Input field', true);
     });
 
     // Error sound for invalid input
@@ -410,4 +414,31 @@ audio.addEventListener('ended', () => {
 progressBar.addEventListener('change', () => {
     const value = progressBar.value;
     speak(`Progress ${Math.round(value)}%`);
+});
+
+// Handle subscribe and join button clicks
+const subscribeBtn = document.querySelector('.subscribe-btn');
+const joinBtn = document.querySelector('.join-btn');
+
+subscribeBtn?.addEventListener('click', () => {
+    playFeedback('clickSound');
+    showToast('Premium subscription coming soon!', 'fa-crown');
+    speak('Premium subscription coming soon!', true);
+});
+
+joinBtn?.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent form submission
+    playFeedback('clickSound');
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+    const terms = document.querySelector('#terms').checked;
+
+    if (!email || !password || !terms) {
+        showToast('Please fill in all required fields and accept the terms', 'fa-exclamation-circle');
+        speak('Please fill in all required fields and accept the terms', true);
+        return;
+    }
+
+    showToast('Account created successfully! Welcome to SoundSense', 'fa-check-circle');
+    speak('Account created successfully! Welcome to SoundSense', true);
 });
