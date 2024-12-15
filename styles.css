@@ -305,8 +305,8 @@ input:checked + .slider:before {
 
 .song-info {
     display: flex;
-    padding-left: var(--pd-medium);
-    padding-right: var(--pd-medium);
+    padding-left: var(--pd-medium) !important;
+    padding-right: var(--pd-medium) !important;
     margin-top: var(--pd-medium);
     justify-content: center;
     align-items: center;
@@ -779,7 +779,7 @@ input:checked + .slider:before {
 }
 
 .join-btn {
-    background: var(--gray-accent);
+    background: var(--white-primary);
     color: var(--black-primary);
     border: none;
     padding: 1rem;
@@ -790,7 +790,7 @@ input:checked + .slider:before {
 }
 
 .join-btn:hover {
-    background: var(--white-primary);
+    background: var(--gray-accent);
 }
 
 .login-link {
