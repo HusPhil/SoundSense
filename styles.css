@@ -68,8 +68,11 @@ main {
 #subscribe-premium {
     padding: var(--pd-small);
     border-radius: var(--br-small);
-    color: var(--white-primary);
-    background-color: var(--dark-gray-accent);
+    color: var(--black-primary);
+    border-radius: var(--br-small); 
+    background: #f2f2f2;
+    box-shadow:  5px 5px 10px #dadada,
+                 -5px -5px 10px #ffffff;
 }
 
 #subscribe-premium p {
@@ -110,9 +113,12 @@ main {
 
 #nav_div h1 {
     color: var(--black-primary);
+    margin-bottom: var(--pd-small);
     text-align: center;
-    
-    border-bottom: 1px solid var(--gray-accent);
+    border-radius: var(--br-small); 
+    background: #f2f2f2;
+    box-shadow:  5px 5px 10px #dadada,
+                 -5px -5px 10px #ffffff;
 }
 
 #settings {
@@ -523,12 +529,13 @@ input:checked + .slider:before {
 
 .subscribe-btn {
     margin-top: .5rem;
-    background-color: var(--gray-accent);
-    color: var(--black-primary);
+    background-color: var(--dark-gray-accent);
+    color: var(--white-primary);
 }
 
 .subscribe-btn:hover {
-    background-color: var(--white-primary);
+    background-color: var(--gray-accent);
+    color: var(--black-primary);
 }
 
 .nav-list {
