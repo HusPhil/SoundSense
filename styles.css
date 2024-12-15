@@ -790,7 +790,7 @@ input:checked + .slider:before {
 }
 
 .join-btn:hover {
-    background: var(--gray-accent);
+    background: var(--black-primary);
 }
 
 .login-link {
