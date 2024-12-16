@@ -4,6 +4,8 @@
 
     --gray-accent: #a9a9a9;
     --dark-gray-accent: #5c5c5c;
+    
+    --mdl-bg: rgba(92, 92, 92, 0.5);
 
     --pd-small: 12px;
     --pd-medium: 16px;
@@ -844,7 +846,6 @@ input:checked + .slider:before {
 }
 
 .modal-content {
-    background: var(--background-color);
     border-radius: 20px;
     padding: 2rem;
     max-width: 500px;
